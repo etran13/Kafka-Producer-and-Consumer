@@ -41,11 +41,8 @@ message_count = 0
 for message in consumer:
     data = json.loads(message.value.decode('utf-8'))
 
-    try:
-        sum += message["random_int"]
-        message_count += 1
-    except:
-        pass
+    sum += message["random_int"]
+    message_count += 1
 
     #Only read the first million messages
     if message_count == 1000000:
