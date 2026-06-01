@@ -37,7 +37,6 @@ producer = KafkaProducer(bootstrap_servers=conf['bootstrap_servers'],
 
 #Main sending loop
 for i in range(1000000):
-  print(f"Sending {i}")
 
   #Create JSON payload
   id = str(uuid.uuid4())
@@ -48,11 +47,12 @@ for i in range(1000000):
 
   #Send to topic
   producer.send(conf["topic_name"], data)
-  producer.flush()
   
   #Echo last id if done
   if i == 999999:
     print(id)
+
+producer.flush()
 
 #Finish
 producer.close()
