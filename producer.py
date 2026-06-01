@@ -9,13 +9,14 @@ import ssl
 
 #Get the topic to send to
 topic = sys.argv[1:]
+print(str(topic))
 
 ##Connection information
 conf = {
         'bootstrap_servers': ["etran13.novalocal:9092",
                               "etran13-2.novalocal:9092",
                               "etran13-3.novalocal:9092"],
-    'topic_name': topic,
+    'topic_name': str(topic),
     'sasl_plain_username': 'usercc',
     'sasl_plain_password': 'MyUserPasswd2024'
 }
