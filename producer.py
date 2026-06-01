@@ -8,7 +8,7 @@ from kafka import KafkaProducer
 import ssl
 
 #Get the topic to send to
-topic = sys.argv[1:]
+topic = sys.argv[1]
 print(str(topic))
 
 ##Connection information
