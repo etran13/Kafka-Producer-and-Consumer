@@ -1,7 +1,7 @@
 import sys
 import uuid
 import random
-import datetime
+from datetime import datetime
 import json
 
 from kafka import KafkaProducer
