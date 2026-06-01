@@ -37,6 +37,7 @@ producer = KafkaProducer(bootstrap_servers=conf['bootstrap_servers'],
 
 #Main sending loop
 for i in range(1000000):
+  print(f"Sending {i}")
 
   #Create JSON payload
   id = str(uuid.uuid4())
