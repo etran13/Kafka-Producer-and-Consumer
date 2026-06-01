@@ -5,7 +5,7 @@ from kafka import KafkaConsumer
 import ssl
 
 #Get the topic to access
-topic = sys.argv[1:]
+topic = sys.argv[1]
 
 ##Connection information
 conf = {
@@ -40,6 +40,7 @@ message_count = 0
 #Get all the messages
 for message in consumer:
     data = json.loads(message.value.decode('utf-8'))
+    print(data)
     sum += int(data["random_int"])
     message_count += 1
 
