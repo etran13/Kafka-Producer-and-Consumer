@@ -40,8 +40,16 @@ message_count = 0
 #Get all the messages
 for message in consumer:
     data = json.loads(message.value.decode('utf-8'))
-    sum += message["random_int"]
-    message_count += 1
+
+    try:
+        sum += message["random_int"]
+        message_count += 1
+    except:
+        pass
+
+    #Only read the first million messages
+    if message_count == 1000000:
+        break
 
 #Print message count and sum
 print(f"Consumer read {message_count} messages, the sum for the topic is {sum}")

@@ -1,9 +1,7 @@
-i = 0
-print(i)
+lisst = [1, 2, 3, 4, 5]
 
-def a():
-    i += 1
-
-a()
-print(i)
+for item in lisst:
+    print(item)
+    if item == 3:
+        break
 
