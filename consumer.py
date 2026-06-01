@@ -39,8 +39,8 @@ message_count = 0
 
 #Get all the messages
 for message in consumer:
-    message = json.loads(message.value.decode('utf-8'))
-    sum += int(message["random_int"])
+    data = json.loads(message.value.decode('utf-8'))
+    sum += int(data["random_int"])
     message_count += 1
 
     #Only read the first million messages
